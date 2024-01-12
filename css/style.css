@@ -108,7 +108,7 @@ input[id="menuicon"]+label span {
 	transition: all 0.2s;
 }
 
-input[id="menuicon"]:hover+label span{
+input[id="menuicon"]:hover+label span {
 	background: #ff0000;
 }
 
@@ -277,169 +277,119 @@ img {
 	padding-left: 35px;
 }
 
-:root {
-	--glow-hue: 222deg;
-	--shadow-hue: 180deg;
-	--spring-easing: linear(0, 0.002, 0.01 0.9%, 0.038 1.8%, 0.156, 0.312 5.8%, 0.789 11.1%, 1.015 14.2%,
-			1.096, 1.157, 1.199, 1.224 20.3%, 1.231, 1.231, 1.226, 1.214 24.6%,
-			1.176 26.9%, 1.057 32.6%, 1.007 35.5%, 0.984, 0.968, 0.956, 0.949 42%,
-			0.946 44.1%, 0.95 46.5%, 0.998 57.2%, 1.007, 1.011 63.3%, 1.012 68.3%,
-			0.998 84%, 1);
-	--spring-duration: 1.33s;
-}
-
-
-@property --shimmer {
-	syntax: "<angle>";
-	inherits: false;
-	initial-value: 33deg;
-}
-
-@keyframes shimmer {
-	0% {
-		--shimmer: 0deg;
-	}
-
-	100% {
-		--shimmer: 360deg;
-	}
-}
-
-@keyframes shine {
-	0% {
-		opacity: 0;
-	}
-
-	15% {
-		opacity: 1;
-	}
-
-	55% {
-		opacity: 1;
-	}
-
-	100% {
-		opacity: 0;
-	}
-}
-
 .button {
-	background-color: #ffffff;
-	box-sizing: border-box;
 	position: relative;
-	isolation: isolate;
-	box-shadow: 0 0 0 1px hsl(var(--glow-hue) 70% 95%),
-		0 0 2px 1px hsl(var(--glow-hue) 100% 80%),
-		0 0 5px 2px hsl(var(--glow-hue) 100% 70%);
-	border-radius: 0.5em;
+}
+
+.button_t {
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: flex;
-	font-weight: 900;
 	justify-content: space-between;
 	align-items: center;
 }
 
-.button:hover:not(:active),
-.button.active {
-	transition-duration: calc(var(--spring-duration)*0.5);
-	transform: scale(1.2);
-	background-color: #ff0000;
-	transition: 0.7s;
+.button {
+	background: #fff;
+	color: #000;
+	line-height: 42px;
+	font-weight: 900;
 }
 
-.shimmer {
+.button span {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.button:before,
+.button:after {
 	position: absolute;
-	inset: -40px;
-	border-radius: inherit;
-	mask-image: conic-gradient(from var(--shimmer, 0deg),
-			transparent 0%,
-			transparent 10%,
-			black 36%,
-			black 45%,
-			transparent 50%,
-			transparent 60%,
-			black 85%,
-			black 95%,
-			transparent 100%);
-	mask-size: cover;
-	mix-blend-mode: hard-light;
-	animation: shimmer 1s linear infinite both;
-}
-
-.button:hover .shimmer::before,
-.button:hover .shimmer::after,
-.button.active .shimmer::before,
-.button.active .shimmer::after {
-	opacity: 1;
-	animation: shine 1.2s ease-in infinite forwards;
-}
-
-.shimmer::before,
-.shimmer::after {
-	transition: all 0.5s ease;
-	opacity: 0;
 	content: "";
-	border-radius: inherit;
+	height: 0%;
+	width: 2px;
+	background: #fff;
+}
+
+.button:before {
+	right: 0;
+	top: 0;
+	transition: all 500ms ease;
+}
+
+.button:after {
+	left: 0;
+	bottom: 0;
+	transition: all 500ms ease;
+}
+
+.button:hover {
+	color: #fff;
+	background: #ff0000;
+}
+
+.button:hover:before {
+	transition: all 500ms ease;
+	height: 100%;
+}
+
+.button:hover:after {
+	transition: all 500ms ease;
+	height: 100%;
+}
+
+.button .button_t:before,
+.button .button_t:after {
 	position: absolute;
-	mix-blend-mode: color;
-	inset: 40px;
-	pointer-events: none;
+	content: "";
+	background: #fff;
 }
 
-.shimmer::before {
-	box-shadow: 0 0 3px 2px hsl(var(--glow-hue) 20% 95%),
-		0 0 7px 4px hsl(var(--glow-hue) 20% 80%),
-		0 0 13px 4px hsl(var(--glow-hue) 50% 70%),
-		0 0 25px 5px hsl(var(--glow-hue) 100% 70%);
-	z-index: -1;
+.button .button_t:before {
+	left: 0;
+	top: 0;
+	width: 0%;
+	height: 2px;
+	transition: all 500ms ease;
 }
 
-.shimmer::after {
-	box-shadow: inset 0 0 0 1px hsl(var(--glow-hue) 70% 95%),
-		inset 0 0 2px 1px hsl(var(--glow-hue) 100% 80%),
-		inset 0 0 5px 2px hsl(var(--glow-hue) 100% 70%);
-	z-index: 2;
+.button .button_t:after {
+	right: 0;
+	bottom: 0;
+	width: 0%;
+	height: 2px;
+	transition: all 500ms ease;
 }
 
-@keyframes animated-text {
-	100% {
-		background-position: -200% 0;
-	}
+.button .button_t:hover:before {
+	width: 100%;
 }
 
-.button:hover .button_t {
-	color: transparent;
-	background-position: 0 0;
-	animation: animated-text 15s linear infinite;
+.button .button_t:hover:after {
+	width: 100%;
 }
 
-.button_t {
-	-webkit-text-stroke: 1px #fff;
-	background: url(../images/main/button.png);
-	background-clip: text;
-	-webkit-background-clip: text;
-}
-
-.button:hover .arrow {
-	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(95deg) brightness(101%) contrast(103%);
-}
-
-.arrow {
-	transform: scale(0.8);
+.button:hover .button_t>img {
+	filter: invert(100%) sepia(0%) saturate(7499%) hue-rotate(254deg) brightness(98%) contrast(100%);
 }
 
 .s1 {
-	width: 160px;
 	font-size: 25px;
 	position: absolute;
 	left: 615px;
 	top: 253px;
-	padding: 0 10px 0 15px;
+	padding: 0 15px;
 }
 
-.fw>img{
+.s1 img,
+.c img {
+	margin-left: 20px;
+}
+
+.fw>img,
+.fw_sticker {
 	position: absolute;
 }
 
@@ -531,15 +481,14 @@ img {
 }
 
 .product {
-	width: 130px;
-	padding: 0 10px 0 15px;
 	position: absolute;
 	z-index: 80;
 	font-size: 20px;
+	padding: 0 15px;
 }
 
 .product img {
-	transform: scale(0.8);
+	margin-left: 10px;
 }
 
 .p1 {
@@ -613,11 +562,10 @@ img {
 
 .c {
 	position: absolute;
-	width: 160px;
 	left: 450px;
 	top: 1106px;
-	padding: 0 15px 0 20px;
 	font-size: 25px;
+	padding: 0 15px;
 }
 
 .sb3_sticker {
@@ -1833,6 +1781,3 @@ footer b {
 .stock li {
 	margin-bottom: 30px;
 }
-
-
-
