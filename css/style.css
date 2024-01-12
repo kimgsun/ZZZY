@@ -363,11 +363,11 @@ img {
 	transition: all 500ms ease;
 }
 
-.button .button_t:hover:before {
+.button:hover .button_t:before {
 	width: 100%;
 }
 
-.button .button_t:hover:after {
+.button:hover .button_t:after {
 	width: 100%;
 }
 
