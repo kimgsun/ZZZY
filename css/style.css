@@ -295,6 +295,7 @@ img {
 	color: #000;
 	line-height: 42px;
 	font-weight: 900;
+	padding: 0 15px;
 }
 
 .button span {
@@ -380,7 +381,6 @@ img {
 	position: absolute;
 	left: 615px;
 	top: 253px;
-	padding: 0 15px;
 }
 
 .s1 img,
@@ -484,7 +484,6 @@ img {
 	position: absolute;
 	z-index: 80;
 	font-size: 20px;
-	padding: 0 15px;
 }
 
 .product img {
@@ -565,7 +564,6 @@ img {
 	left: 450px;
 	top: 1106px;
 	font-size: 25px;
-	padding: 0 15px;
 }
 
 .sb3_sticker {
