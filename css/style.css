@@ -249,7 +249,16 @@ img {
 
 
 /* main */
-#main_mb img {
+#main_mb{
+	width: 100%;
+	margin: auto;
+}
+
+#main_mb video{
+	width: 100%;
+}
+
+#main_mb img{
 	width: 100%;
 }
 
