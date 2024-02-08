@@ -102,17 +102,3 @@ const maxSnowflakes = 1000,
             isRunning = !document.hidden;
             if (isRunning) init();
         };
-
-var swiper = new Swiper(".button_t", {
-    grabCursor: true,
-    speed: 500,
-    effect: "slide",
-    loop: true,
-    mousewheel: {
-        invert: false,
-        sensitivity: 1,
-    },
-});
-
-swiper.enable();
-
