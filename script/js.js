@@ -38,6 +38,7 @@ const maxSnowflakes = 1000,
             snowflakes = [],
             container = document.getElementById("snow");
 
+if (container) {
         console.clear();
 
         let isRunning = true;
@@ -102,3 +103,4 @@ const maxSnowflakes = 1000,
             isRunning = !document.hidden;
             if (isRunning) init();
         };
+}
