@@ -28,15 +28,13 @@
 
 - 🧭 **사이드바 네비게이션** - CSS checkbox 기반 햄버거 메뉴, X 전환 애니메이션
 - 📂 **Shop 서브메뉴** - jQuery slideToggle 아코디언 (NOIRSPRAY / New In / Outer 등)
-- 🗂️ **컬렉션 탭** - 시즌별 탭 전환 (FW26 · SS26 · FW25 · SS25), fadeIn 전환
-- 📋 **컬렉션 아코디언** - col_nav slideToggle, 활성 항목 `.on` 클래스
+- 📋 **컬렉션 아코디언** - col_nav slideToggle (FW26 · SS26 · FW25 · SS25 메뉴 UI), 활성 항목 `.on` 클래스
 - 🎉 **이벤트 탭** - 진행중 / 종료 이벤트 필터, fadeIn 전환
 - 📍 **Stockist 탭** - Flagship Store / Department Store / Online 매장·온라인 정보 전환
 - ❄️ **눈 내리는 효과** - 메인 페이지 Vanilla JS snowflake 애니메이션
 - ✨ **스크롤 애니메이션** - AOS(Animate On Scroll) zoom-in·flip-right 등 적용
 - 🖱️ **Button Hover** - 브랜드 레드(#ff0000) 배경·테두리 라인 애니메이션
-- 🛍️ **상품 Hover** - hover 오버레이·텍스트 레드 전환
-- 🔎 **뷰포트 축소** - 1400px 미만에서 전체 비율 zoom, 가로 스크롤 없이 레이아웃 유지
+- 🛍️ **상품 Hover** - 앞/뒤 이미지 전환, 상품명·가격 레드 전환
 
 ## 🛠️ 기술 스택
 
@@ -67,7 +65,7 @@
 ZZZY/
 ├── index.html                   # 메인 (Home) — 히어로 이미지·FW26·콜라보·셀럽
 ├── sub1.html                    # Brand — About · Logo · Core Value · Moodboard · Color
-├── sub2.html                    # Collection — 시즌별 컬렉션 탭·아코디언
+├── sub2.html                    # Collection — FW26 룩북 · 시즌 메뉴 아코디언
 ├── sub3.html                    # Shop — ZZZY × NOIRSPRAY 상품 목록·Hover
 ├── sub4.html                    # Event — 진행중/종료 이벤트 탭
 ├── sub5.html                    # Stockist — 오프라인·백화점·온라인 매장 정보
@@ -75,22 +73,22 @@ ZZZY/
 ├── css/
 │   └── style.css                # 전체 페이지 스타일
 ├── script/
-│   ├── js.js                    # jQuery 인터랙션 + 눈 효과
-│   └── viewport-fit.js          # 좁은 창 전체 zoom (1400 기준)
+│   └── js.js                    # jQuery 인터랙션 + 눈 효과
 └── images/
     ├── main/                    # 홈 히어로·FW26·콜라보·셀럽·헤더·푸터
     ├── brandstory/              # Brand 페이지 이미지
     ├── collection/              # Collection 시즌 이미지
     ├── store/                   # Shop 상품 이미지
-    └── event/                   # Event 이미지
+    ├── event/                   # Event 이미지
+    └── stockist/                # Stockist 매장 이미지
 ```
 
 ## 📐 퍼블리싱 포인트
 
 | 항목             | 내용                                                                                                                      |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **Layout**       | Desktop 우선 (body min-width: 1320px, viewport=device-width). 좁은 창은 1400 기준 html zoom (`viewport-fit.js`). 고정 헤더 + 사이드바 메뉴 |
-| **Key Function** | jQuery 탭·아코디언·서브메뉴, AOS 스크롤 애니메이션, CSS checkbox 햄버거, Vanilla JS snowflake·viewport zoom, Button·상품 Hover |
+| **Layout**       | Desktop 우선 (body min-width: 1320px, viewport=device-width). 고정 헤더 + 사이드바 메뉴 |
+| **Key Function** | jQuery 탭·아코디언·서브메뉴, AOS 스크롤 애니메이션, CSS checkbox 햄버거, Vanilla JS snowflake, Button·상품 Hover |
 | **Web Standard** | 시맨틱 태그(header, footer), alt 속성, Chrome/Firefox/Safari/Edge 최신 버전 대상                                          |
 
 ## 🎯 핵심 기능 상세
@@ -128,7 +126,7 @@ $(".menu>li:nth-of-type(4)").click(function () {
 });
 ```
 
-### 3️⃣ 컬렉션·이벤트 탭 (js.js)
+### 3️⃣ 이벤트 탭 (js.js)
 
 ```javascript
 // 탭 클릭 시 fadeIn 전환, active 클래스 토글
@@ -256,9 +254,9 @@ header {
 | 페이지         | 파일       | 주요 콘텐츠                                                            |
 | -------------- | ---------- | ---------------------------------------------------------------------- |
 | **Home**       | index.html | 히어로 이미지·FW26 컬렉션·NOIRSPRAY 콜라보·셀럽 섹션                  |
-| **Brand**      | sub1.html  | About Us · Brand Story · Logo Concept · Core Value · Moodboard · Color |
-| **Collection** | sub2.html  | FW26 · SS26 · FW25 · SS25 시즌별 컬렉션                        |
-| **Shop**       | sub3.html  | ZZZY × NOIRSPRAY 상품 그리드·카테고리 필터·Hover                       |
+| **Brand**      | sub1.html  | About Us · Brand Story · Logo Concept · Core Value · Design Strategy · Moodboard · Color |
+| **Collection** | sub2.html  | FW26 컬렉션 룩북 · 시즌 메뉴 아코디언 (SS26 · FW25 · SS25)      |
+| **Shop**       | sub3.html  | ZZZY × NOIRSPRAY 상품 그리드·앞/뒤 Hover                       |
 | **Event**      | sub4.html  | 진행중(FW26 Season Off·인스타그램·셀럽샵) / 종료(black friday·popup)  |
 | **Stockist**   | sub5.html  | 성수·홍대·전포 스토어 / 백화점·온라인 채널                             |
 
@@ -268,7 +266,7 @@ header {
 | --------- | --------- | --------- | --------- |
 | ✅ Latest | ✅ Latest | ✅ Latest | ✅ Latest |
 
-> Desktop 우선 설계 (min-width: 1320px). 좁은 창은 `viewport-fit.js`로 전체 비율 축소 (개별 반응형 레이아웃은 미적용).
+> Desktop 우선 설계 (min-width: 1320px). 개별 반응형 레이아웃은 미적용.
 
 ## 📋 코딩 컨벤션
 
@@ -277,20 +275,20 @@ header {
 - 페이지별 단일 HTML 파일 구조 (index + sub1~5)
 - header·footer 공통 레이아웃 반복
 - 이미지 alt 속성 필수
-- viewport `width=device-width, initial-scale=1` + 좁은 창 zoom (Desktop 우선)
+- viewport `width=device-width, initial-scale=1` (Desktop 우선)
 
 ### CSS
 
 - 단일 `style.css` 파일로 전 페이지 스타일 관리
 - 클래스 기반 레이아웃 (`.fw`, `.collab`, `.tab`, `.stock` 등)
 - `:hover` 전환에 `transition: all 500ms ease` 패턴
-- 커스텀 스크롤바 (webkit-scrollbar, 브랜드 레드)
+- 커스텀 스크롤바 (thumb `#ff0000`, track `#ffb7b7`)
 
 ### JavaScript
 
 - jQuery 3.7.1 + Vanilla JS 혼용
 - jQuery: 탭·아코디언·서브메뉴 slideToggle
-- Vanilla JS: snowflake 애니메이션 (메인), `viewport-fit.js`로 1400px 미만 전체 zoom
+- Vanilla JS: snowflake 애니메이션 (메인)
 - AOS 2.3.1 CDN: 스크롤 진입 애니메이션
 
 ## 🔗 Live View / Repository
