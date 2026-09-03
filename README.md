@@ -1,16 +1,20 @@
+<div align="center">
+
 # ZZZY
 
-### 패션 브랜드 웹사이트 · **Portfolio Project**
+### 패션 브랜드 웹사이트
 
 **BE BOLD. BE YOU. BE ZZZY.**
 
 [Live View](https://kimgsun.github.io/ZZZY/)
 
+</div>
+
 ---
 
 ## 📌 프로젝트 소개
 
-개성 있는 패션 브랜드 **ZZZY** 컨셉의 BI/BX 및 웹사이트 **포트폴리오 프로젝트**입니다. BI/BX 디자인, UI 디자인, 퍼블리싱을 담당한 개인 프로젝트입니다.
+개성 있는 패션 브랜드 **ZZZY** 컨셉의 BI/BX 및 웹사이트입니다. BI/BX 디자인, UI 디자인, 퍼블리싱을 담당한 개인 프로젝트입니다.
 
 다양성·자유·열정을 핵심 가치로 삼는 ZZZY의 브랜드 아이덴티티를 웹 UI와 인터랙션까지 일관되게 연결했습니다. FW26 컬렉션과 ZZZY × NOIRSPRAY 콜라보레이션을 중심으로 메인·브랜드·컬렉션·샵·이벤트·스토어 페이지를 구성했습니다.
 
@@ -302,6 +306,10 @@ header {
 
 ---
 
+<div align="center">
+
 **BI/BX Design · UI Design · Publishing** (Portfolio)
 
 Built with HTML5, CSS, JavaScript, jQuery, AOS
+
+</div>
