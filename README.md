@@ -1,8 +1,12 @@
+<div align="center">
+
 # ZZZY
 
 ### 패션 브랜드 웹사이트
 
 [Live View](https://kimgsun.github.io/ZZZY/)
+
+</div>
 
 ---
 
@@ -285,6 +289,10 @@ header {
 
 ---
 
+<div align="center">
+
 **BI/BX Design · UI Design · Publishing** (Portfolio)
 
 Built with HTML5, CSS, JavaScript, jQuery, AOS
+
+</div>
