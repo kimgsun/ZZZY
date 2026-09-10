@@ -5,6 +5,10 @@
 	padding: 0;
 }
 
+html {
+	height: 100%;
+}
+
 body {
 	background-color: #000;
 	font-family: 'Pretendard';
@@ -12,6 +16,9 @@ body {
 	line-height: 25px;
 	color: #fff;
 	min-width: 1320px;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 body::-webkit-scrollbar {
@@ -197,6 +204,10 @@ footer img,
 	width: 100%;
 	position: relative;
 	overflow: hidden;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
 }
 
 #main #snow {
@@ -696,6 +707,8 @@ footer img,
 footer {
 	background-color: #D8D8D8;
 	height: 238px;
+	margin-top: auto;
+	flex-shrink: 0;
 }
 
 .footer_in {
@@ -1626,8 +1639,8 @@ footer b {
 	color: #8B8B8B;
 }
 
-#event>footer {
-	margin-top: 125px;
+#event>.tab {
+	margin-bottom: 125px;
 }
 
 .event {
