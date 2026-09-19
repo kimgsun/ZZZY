@@ -14,7 +14,7 @@
 
 패션 브랜드 **ZZZY** 컨셉의 BI/BX 및 웹사이트입니다. BI/BX 디자인, UI 디자인, 퍼블리싱을 담당한 개인 프로젝트입니다.
 
-FW26 컬렉션과 ZZZY × NOIRSPRAY 콜라보레이션을 중심으로 메인·브랜드·컬렉션·샵·이벤트·스토어 페이지를 구성했습니다.
+FW26 컬렉션과 ZZZY × NOIRSPRAY 콜라보레이션을 중심으로 메인·브랜드·컬렉션·샵·이벤트·Stockist 페이지를 구성했습니다.
 
 
 | 항목     | 내용                        |
@@ -76,7 +76,7 @@ ZZZY/
 
 | 항목               | 내용                                                                        |
 | ---------------- | ------------------------------------------------------------------------- |
-| **Layout**       | Desktop 우선 (`min-width: 1320px`). 고정 헤더 + 사이드바 메뉴                         |
+| **Layout**       | 콘텐츠 폭 `1320px` + `viewport-fit.js`(`1400` 기준 zoom). 고정 헤더 + 사이드바 메뉴 |
 | **Key Function** | jQuery 탭·아코디언, AOS 스크롤 애니메이션, CSS checkbox 햄버거, snowflake, Hover          |
 | **Web Standard** | 시맨틱 태그(`header`, `footer`), `alt` 속성, Chrome/Firefox/Safari/Edge 최신 버전 대상 |
 
@@ -189,13 +189,9 @@ Diversity · Freedom · Passion
 ### 컬러 팔레트
 
 ```css
-#000;      /* 배경 */
-#fff;      /* 텍스트·버튼 */
-#ff0000;   /* 포인트 (CTA·Hover) */
-#ffb7b7;   /* 서브 (스크롤바·Hover 오버레이) */
-#646464;   /* 보조 텍스트 */
-#8B8B8B;   /* 비활성·캡션 */
-#D8D8D8;   /* 구분·배경 */
+#000000;   /* Black — 배경 */
+#FF0000;   /* Red — 포인트 (CTA·Hover) */
+#FFFFFF;   /* White — 텍스트·버튼 */
 ```
 
 ### 타이포그래피
@@ -214,6 +210,8 @@ color: #fff;
 
 ### 레이아웃 기준
 
+콘텐츠 프레임은 `1320px`이고, `viewport-fit.js`가 뷰포트 폭 `1400` 미만일 때 `html`에 `css zoom`을 걸어 비율을 맞춥니다. 미디어쿼리 기반 반응형 레이아웃은 없습니다.
+
 ```css
 body {
   min-width: 1320px;
@@ -221,13 +219,20 @@ body {
 }
 .fw {
   width: 1320px;
-  margin: 50px auto;
+  margin: 50px auto 10px;
 }
 header {
   position: fixed;
   width: 100%;
   z-index: 99;
 }
+```
+
+```javascript
+// viewport-fit.js
+var DESIGN_WIDTH = 1400;
+var scale = Math.min(1, viewportWidth() / DESIGN_WIDTH);
+root.style.zoom = String(scale);
 ```
 
 ## 페이지 구성
@@ -251,7 +256,7 @@ header {
 | Latest | Latest  | Latest | Latest |
 
 
-> Desktop 우선 (`min-width: 1320px`). 개별 반응형 레이아웃은 미적용.
+> Desktop 우선. 콘텐츠 `1320px` + `viewport-fit.js` zoom(`1400` 기준). 미디어쿼리 반응형 레이아웃은 미적용.
 
 ## 코딩 컨벤션
 
@@ -260,7 +265,7 @@ header {
 - 페이지별 단일 HTML 파일 (`index` + `sub1`~`5`)
 - header·footer 공통 레이아웃 반복
 - 이미지 `alt` 속성
-- viewport `width=device-width, initial-scale=1` (Desktop 우선)
+- viewport `width=device-width, initial-scale=1` + `viewport-fit.js` zoom 스케일
 
 ### CSS
 
